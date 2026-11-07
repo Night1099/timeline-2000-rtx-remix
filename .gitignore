@@ -19,6 +19,7 @@
 
 # Build script and config
 !build.bat
+!Timeline_Component_Registration_Patch.bat
 !*.ini
 !*.conf
 !.gitignore

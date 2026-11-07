@@ -52,9 +52,10 @@ You need your own copy of Timeline. No game files are included here.
 2. **caesarim.dll MMX driver patch:** Timeline insists on an "MMX" Direct3D driver that dxwrapper does not offer, so
    startup crashes. Patch `caesarim.dll` in a hex editor: at file offset `0x78FC`, change bytes `75 05` to `90 90`.
    Keep a backup of the original.
-3. **COM components:** the game's components must be registered to the folder the game is in. Run the game's
-   `Timeline_Component_Registration_Patch.bat` **as administrator** from the game folder. Do this again whenever
-   you move the folder.
+3. **COM components:** the game's components must be registered to the folder the game is in. Otherwise the game
+   crashes a few seconds in. Copy `Timeline_Component_Registration_Patch.bat` from this repo into the game folder and
+   run it **as administrator**. It registers `ActiveScriptor.ocx` and every DLL in `Components\`, then checks that
+   `TLS.EventMaster` is registered. Do this again whenever you move the folder.
 4. **RTX Remix:** install the Remix runtime into the game folder as usual, then rename Remix's `d3d9.dll` to
    `d3d9_remix.dll`.
 5. **This proxy:** copy the built `d3d9.dll` and `assets/remix-comp-proxy.ini` into the game folder.
