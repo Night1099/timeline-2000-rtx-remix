@@ -1,0 +1,51 @@
+# Whitelist .gitignore — only tracked file types and directories are allowed.
+# Everything else (build artifacts, IDE files, OS junk) is ignored by default.
+# Goal: Prevent uploading files that may be copyrighted or are otherwise unnecessary.
+
+# Ignore everything
+*
+
+# Allow looking into subdirectories
+!*/
+
+# Source code
+!*.py
+!*.cpp
+!*.hpp
+!*.h
+!*.c
+!*.inc
+!*.inl
+
+# Build script and config
+!build.bat
+!*.ini
+!*.conf
+!.gitignore
+!.editorconfig
+
+# Dependency libraries needed for linking
+!*.lib
+
+# Deployed binaries (ASI loader)
+!*.dll
+!*.def
+
+# Assets
+!*.png
+
+# Documentation
+!*.md
+!LICENSE
+
+# Re-ignore build output and local-only material (overrides the above)
+build/
+# Backups contain original game DLLs and NVIDIA's Remix d3d9.dll
+backups/
+# Disassembly dumps of the game DLLs and extracted game textures
+scratch/
+.claude/
+# Microsoft DirectX SDK import libraries: copied in locally, not redistributable here
+deps/dxsdk/Lib/**/*.lib
+# Local screenshots
+/shot*.png
